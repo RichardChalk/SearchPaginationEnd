@@ -4,7 +4,25 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Alla Categories</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                Category Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model.Categories)
+        {
+            <tr>
+                <td>@cat.Name</td>
+                <td><a asp-page="/Category" asp-route-categoryId="@cat.Id" class="btn btn-primary">View</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

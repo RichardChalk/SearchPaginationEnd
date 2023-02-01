@@ -1,7 +1,7 @@
-﻿using RazorPlusServices.Models;
-using static RazorPlusServices.Pages.SuppliersModel;
+﻿using SearchPaginationEnd.Models;
+using static SearchPaginationEnd.Pages.SuppliersModel;
 
-namespace RazorPlusServices.Services
+namespace SearchPaginationEnd.Services
 {
     public class SupplierService : ISupplierService
     {

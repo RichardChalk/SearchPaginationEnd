@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RazorPlusServices.Models
+namespace SearchPaginationEnd.Models
 {
     public partial class Order
     {

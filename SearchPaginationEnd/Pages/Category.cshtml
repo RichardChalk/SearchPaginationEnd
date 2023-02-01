@@ -1,75 +1,76 @@
 ﻿@page
-@model SearchPaginationEnd.Pages.SuppliersModel
+@model SearchPaginationEnd.Pages.CategoryModel
 @{
 }
 
-<h1>Alla Suppliers</h1>
+<h1>Alla Products inom Category: @Model.CategoryName</h1>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th scope="col"> Id</th>
             <th scope="col">
-                Supplier Name
-                <a asp-page="/Suppliers"
-                   asp-route-sortColumn="Name"
-                   asp-route-sortOrder="asc"
-                   style="text-decoration:none">
-                   <i class="fa-solid fa-angle-up"></i>
-                   
-                </a>
-                <a asp-page="/Suppliers"
-                   asp-route-sortColumn="Name"
-                   asp-route-sortOrder="desc"
-                   style="text-decoration:none">
-                   <i class="fa-solid fa-angle-down"></i>
-                </a>
-            </th>
-            <th scope="col">
-                City
-                <a asp-page="/Suppliers"
-                   asp-route-sortColumn="City"
+                Product Name
+                <a asp-page="/Category"
+                   asp-route-sortColumn="ProductName"
                    asp-route-sortOrder="asc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-up"></i>
 
                 </a>
-                <a asp-page="/Suppliers"
-                   asp-route-sortColumn="City"
+                <a asp-page="/Category"
+                   asp-route-sortColumn="ProductName"
                    asp-route-sortOrder="desc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-down"></i>
                 </a>
             </th>
             <th scope="col">
-                Country
-                <a asp-page="/Suppliers"
-                   asp-route-sortColumn="Country"
+                Unit Price
+                <a asp-page="/Category"
+                   asp-route-sortColumn="UnitPrice"
                    asp-route-sortOrder="asc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-up"></i>
 
                 </a>
-                <a asp-page="/Suppliers"
-                   asp-route-sortColumn="Country"
+                <a asp-page="/Category"
+                   asp-route-sortColumn="UnitPrice"
                    asp-route-sortOrder="desc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-down"></i>
                 </a>
             </th>
+            <th scope="col">
+                Units in Stock
+                <a asp-page="/Category"
+                   asp-route-sortColumn="UnitsInStock"
+                   asp-route-sortOrder="asc"
+                   style="text-decoration:none">
+                    <i class="fa-solid fa-angle-up"></i>
+
+                </a>
+                <a asp-page="/Category"
+                   asp-route-sortColumn="UnitsInStock"
+                   asp-route-sortOrder="desc"
+                   style="text-decoration:none">
+                    <i class="fa-solid fa-angle-down"></i>
+                </a>
+            </th>
+            <th scope="col">
+                Category
+            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-
-        @foreach (var supp in Model.Suppliers)
+        @foreach (var prod in Model.Products)
         {
             <tr>
-                <td>@supp.Id</td>
-                <td>@supp.Name</td>
-                <td>@supp.City</td>
-                <td>@supp.Country</td>
-                <td><a asp-page="/Supplier" asp-route-id="@supp.Id" class="btn btn-primary">View</a></td>
+                <td>@prod.Name</td>
+                <td>@prod.UnitPrice</td>
+                <td>@prod.UnitInStock</td>
+                <td><a asp-page="/Product" asp-route-id="@prod.Id" class="btn btn-primary">View</a></td>
             </tr>
         }
     </tbody>

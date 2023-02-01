@@ -1,6 +1,6 @@
-﻿using RazorPlusServices.Models;
+﻿using SearchPaginationEnd.Models;
 
-namespace RazorPlusServices.Services
+namespace SearchPaginationEnd.Services
 {
     public interface ISupplierService
     {

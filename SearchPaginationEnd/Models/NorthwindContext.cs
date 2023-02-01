@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace RazorPlusServices.Models
+namespace SearchPaginationEnd.Models
 {
     public partial class NorthwindContext : DbContext
     {

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPlusServices.Models;
+using SearchPaginationEnd.Models;
 
-namespace RazorPlusServices.Pages
+namespace SearchPaginationEnd.Pages
 {
     public class SupplierModel : PageModel
     {

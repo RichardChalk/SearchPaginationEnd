@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using RazorPlusServices.Models;
-using RazorPlusServices.Services;
+using SearchPaginationEnd.Models;
+using SearchPaginationEnd.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +11,10 @@ builder.Services.AddDbContext<NorthwindContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // Lägg till min SupplierService
 builder.Services.AddTransient<ISupplierService, SupplierService>();
+// Lägg till min CategoryService
+builder.Services.AddTransient<ICategoryService, CategoryService>();
+// Lägg till min ProductService
+builder.Services.AddTransient<IProductService, ProductService>();
 
 var app = builder.Build();
 
