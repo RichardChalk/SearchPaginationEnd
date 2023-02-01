@@ -14,8 +14,6 @@ namespace SearchPaginationEnd.Pages
             _productService = productService;
             _categoryService = categoryService;
         }
-        public string CategoryName { get; set; }
-
         public class ProductViewModel
         {
             public int Id { get; set; }
@@ -24,6 +22,7 @@ namespace SearchPaginationEnd.Pages
             public int UnitInStock { get; set; }
         }
         public List<ProductViewModel> Products { get; set; }
+        public string CategoryName { get; set; }
 
         public void OnGet(int categoryId)
         {
