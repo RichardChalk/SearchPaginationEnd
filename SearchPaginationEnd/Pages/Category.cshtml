@@ -13,6 +13,7 @@
                 Product Name
                 <a asp-page="/Category"
                    asp-route-sortColumn="ProductName"
+                   asp-route-categoryId="@Model.CategoryId"
                    asp-route-sortOrder="asc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-up"></i>
@@ -20,6 +21,7 @@
                 </a>
                 <a asp-page="/Category"
                    asp-route-sortColumn="ProductName"
+                   asp-route-categoryId="@Model.CategoryId"
                    asp-route-sortOrder="desc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-down"></i>
@@ -30,6 +32,7 @@
                 Unit Price
                 <a asp-page="/Category"
                    asp-route-sortColumn="UnitPrice"
+                   asp-route-categoryId="@Model.CategoryId"
                    asp-route-sortOrder="asc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-up"></i>
@@ -37,6 +40,7 @@
                 </a>
                 <a asp-page="/Category"
                    asp-route-sortColumn="UnitPrice"
+                   asp-route-categoryId="@Model.CategoryId"
                    asp-route-sortOrder="desc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-down"></i>
@@ -47,6 +51,7 @@
                 Units in Stock
                 <a asp-page="/Category"
                    asp-route-sortColumn="UnitsInStock"
+                   asp-route-categoryId="@Model.CategoryId"
                    asp-route-sortOrder="asc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-up"></i>
@@ -54,6 +59,7 @@
                 </a>
                 <a asp-page="/Category"
                    asp-route-sortColumn="UnitsInStock"
+                   asp-route-categoryId="@Model.CategoryId"
                    asp-route-sortOrder="desc"
                    style="text-decoration:none">
                     <i class="fa-solid fa-angle-down"></i>

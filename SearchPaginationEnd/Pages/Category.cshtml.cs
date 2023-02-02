@@ -23,13 +23,16 @@ namespace SearchPaginationEnd.Pages
         }
         public List<ProductViewModel> Products { get; set; }
         public string CategoryName { get; set; }
+        public int CategoryId { get; set; }
 
-        public void OnGet(int categoryId)
+        public void OnGet(int categoryId, string sortColumn, string sortOrder)
         {
+            CategoryId = categoryId;
+
             CategoryName = _categoryService.ReadCategories()
                 .First(c => c.CategoryId == categoryId).CategoryName;
 
-            Products = _productService.ReadProducts(categoryId, null, null, 0)
+            Products = _productService.ReadProducts(categoryId, sortColumn, sortOrder, 0)
                 .Select(p => new ProductViewModel
                 {
                     Id = p.ProductId,
