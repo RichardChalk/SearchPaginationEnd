@@ -13,10 +13,17 @@ namespace SearchPaginationEnd.Services
         }
 
         public IEnumerable<Product> ReadProducts(
-            int categoryId, string sortColumn, string sortOrder, int page)
+            int categoryId, string sortColumn, string sortOrder, int page, string q)
         {
             var query = _dbContext.Products
                 .Where(p => p.Category.CategoryId == categoryId);
+
+            if (!string.IsNullOrEmpty(q))
+            {
+                query = query
+                    .Where(p => p.ProductName.Contains(q) ||
+                    p.Supplier.CompanyName.Contains(q));
+            }
 
             if (string.IsNullOrEmpty(sortOrder))
                 sortOrder = "asc";
@@ -44,6 +51,12 @@ namespace SearchPaginationEnd.Services
                 else
                     query = query.OrderBy(p => p.UnitsInStock);
             }
+
+            var firstItemIndex = (page - 1) * 5; // 5 är page storlek
+
+            query = query.Skip(firstItemIndex);
+            query = query.Take(5); // 5 är page storlek
+
             return query.ToList();
         }
     }
