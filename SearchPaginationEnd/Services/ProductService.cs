@@ -1,6 +1,7 @@
 ﻿using SearchPaginationEnd.Models;
 using System.Security.Cryptography.X509Certificates;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static SearchPaginationEnd.Pages.CategoryModel;
 
 namespace SearchPaginationEnd.Services
 {
@@ -58,6 +59,22 @@ namespace SearchPaginationEnd.Services
             query = query.Take(5); // 5 är page storlek
 
             return query.ToList();
+        }
+
+        public ProductViewModel ReadProduct(int productId)
+        {
+            var prodDb = _dbContext.Products
+                .First(p => p.ProductId == productId);
+
+            var prodVm = new ProductViewModel()
+            {
+                Id= prodDb.ProductId,
+                Name = prodDb.ProductName,
+                UnitPrice = prodDb.UnitPrice.Value,
+                UnitInStock = prodDb.UnitsInStock.Value
+            };
+
+            return prodVm;
         }
     }
 }

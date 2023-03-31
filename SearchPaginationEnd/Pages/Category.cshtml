@@ -91,7 +91,7 @@
         <td>@prod.Name</td>
         <td>@prod.UnitPrice</td>
         <td>@prod.UnitInStock</td>
-        <td><a asp-page="/Product" asp-route-id="@prod.Id" class="btn btn-primary">View</a></td>
+        <td><a asp-page="/Product" asp-route-prodId="@prod.Id" asp-route-catId="@Model.CategoryId" class="btn btn-primary">View</a></td>
     </tr>
     }
     <tr>

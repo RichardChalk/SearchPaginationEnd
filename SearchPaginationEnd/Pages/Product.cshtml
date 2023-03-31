@@ -1,0 +1,20 @@
+﻿@page
+@model SearchPaginationEnd.Pages.ProductModel
+@{
+}
+
+
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h2 class="card-title" style="color:red">@Model.ProductVM.Name</h2>
+        <h4 class="card-title">@Model.CategoryName</h4>
+        <p class="card-text">Unit Price: @Model.ProductVM.UnitPrice.ToString("0.00") kr</p>
+        <p class="card-text">Quantity: @Model.ProductVM.UnitInStock st</p>
+
+
+        @*return to correct category page!!*@
+
+        <a asp-page="/Category" asp-route-categoryId="@Model.CategoryId" class="btn btn-secondary">Back</a>
+    </div>
+</div>
